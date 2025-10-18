@@ -1,0 +1,6 @@
+python -m backend.cleardata - delete entries
+
+uvicorn backend.main:app --reload   - starts backend
+
+npm run build
+npm run deploy
