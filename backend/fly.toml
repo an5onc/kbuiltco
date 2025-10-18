@@ -1,9 +1,9 @@
-# fly.toml app configuration file generated for backend-still-sun-8819 on 2025-10-14T18:12:40-06:00
+# fly.toml app configuration file generated for kbuiltco-icy-pine-8869 on 2025-10-17T20:15:57-06:00
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = 'kbuiltco'
+app = 'kbuiltco-icy-pine-8869'
 primary_region = 'ord'
 
 [build]
@@ -17,6 +17,7 @@ primary_region = 'ord'
   processes = ['app']
 
 [[vm]]
-  memory = '4gb'
+  size = "shared-cpu-2x"
+  memory = '2gb'
   cpu_kind = 'shared'
   cpus = 1
