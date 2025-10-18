@@ -116,9 +116,8 @@ export default function EntryForm() {
           {message && <p className="mt-2 text-green-600 text-center">{message}</p>}
 
           <p className="mt-4 text-xs text-gray-500">
-            By clicking Submit, you give permission to Kieferbuilt to contact you
-            using the information provided. You also agree to allow us to store
-            your personal information in our database.
+            By clicking Submit, you give Kieferbuilt Contracting permission to contact you using the information
+            provided on this form. Message and data rates may apply. 
           </p>
         </form>
       </div>
