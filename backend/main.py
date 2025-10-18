@@ -26,15 +26,23 @@ def get_db():
 @app.post("/entries")
 def create_entry(entry: schemas.EntryCreate, db: Session = Depends(get_db)):
     if entry.phone:
-    # Check that phone is all digits
         if not entry.phone.isnumeric():
             raise HTTPException(status_code=400, detail="Phone must be numeric")
-    # Check that phone is exactly 10 digits
         if len(entry.phone) != 10:
             raise HTTPException(status_code=400, detail="Phone must be exactly 10 digits")
-    # Validate question1
         if entry.question1 not in ("yes", "no"):
             raise HTTPException(status_code=400, detail="question1 must be 'yes' or 'no'")
+
+    # 👇 Prevent duplicate entries
+    existing_entry = db.query(models.Entry).filter(
+        (models.Entry.email == entry.email) | (models.Entry.phone == entry.phone)
+    ).first()
+
+    if existing_entry:
+        raise HTTPException(
+            status_code=400,
+            detail="You have already been entered in the raffle, only one entry is allowed."
+        )
 
     new_entry = models.Entry(
         name=entry.name,
