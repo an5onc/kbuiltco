@@ -81,3 +81,7 @@ def get_all_entries(db: Session = Depends(get_db)):
         }
         for e in entries
     ]
+
+@app.get("/")
+def root():
+    return {"status": "API running", "routes": ["/entries", "/random_winner"]}
