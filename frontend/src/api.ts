@@ -1,1 +1,0 @@
-export const API_URL = "https://kbuiltco-icy-pine-8869.fly.dev";

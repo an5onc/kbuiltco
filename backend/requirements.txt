@@ -1,6 +1,0 @@
-fastapi
-uvicorn
-sqlalchemy
-qrcode
-email-validator
-pydantic[email]
