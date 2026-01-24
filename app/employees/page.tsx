@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import Image from "next/image";
 import { PageHeader } from "@/components/sections/page-header";
 import { Card, CardContent } from "@/components/ui/card";
 import { StaggerContainer, StaggerItem } from "@/components/motion/scroll-reveal";
@@ -10,37 +11,24 @@ export const metadata: Metadata = {
     "Meet the experienced team at Kiefer Built Contracting who bring your dream home to life.",
 };
 
-// TODO: Replace with actual team data from CMS or content file
 const teamMembers = [
   {
-    name: "Team Member Name",
-    role: "Founder & President",
-    bio: "With over 25 years of experience in custom home building, leading our team with a commitment to quality and client satisfaction.",
+    name: "Mark Kiefer",
+    role: "Owner",
+    bio: "With 25 years in the construction industry, Mark excels at finding creative solutions that bring each client's vision to life. His expertise spans from foundations to interior finishes, with notable projects including Dayspring Christian School and the Weld County Food Bank.",
+    image: "/team/mark-kiefer.jpg",
   },
   {
-    name: "Team Member Name",
-    role: "Project Manager",
-    bio: "Ensuring every project runs smoothly from groundbreaking to final walkthrough with meticulous attention to detail.",
+    name: "Mindy Kiefer",
+    role: "CFO",
+    bio: "Mindy brings 25 years of experience in insurance and accounting to oversee project finances and budgetary controls. Her meticulous attention to detail ensures smooth project execution from a financial standpoint.",
+    image: "/team/mindy-kiefer.jpg",
   },
   {
-    name: "Team Member Name",
-    role: "Lead Estimator",
-    bio: "Providing accurate, transparent estimates that help clients plan their dream homes with confidence.",
-  },
-  {
-    name: "Team Member Name",
-    role: "Construction Superintendent",
-    bio: "Overseeing on-site operations and coordinating our skilled trades to deliver exceptional results.",
-  },
-  {
-    name: "Team Member Name",
-    role: "Client Relations",
-    bio: "Your dedicated point of contact throughout the building process, ensuring clear communication every step of the way.",
-  },
-  {
-    name: "Team Member Name",
-    role: "Design Coordinator",
-    bio: "Helping clients make design selections that bring their vision to life while staying within budget.",
+    name: "Miles Kiefer",
+    role: "Estimator & Project Manager",
+    bio: "With lifelong involvement in the construction industry, Miles brings a creative and calm approach to project management. He excels at optimizing spaces and guiding projects from conception through completion.",
+    image: "/team/miles-kiefer.jpg",
   },
 ];
 
@@ -60,17 +48,15 @@ export default function EmployeesPage() {
               <StaggerItem key={member.name + member.role}>
                 <Card hover className="h-full">
                   <CardContent className="p-6">
-                    {/* Avatar Placeholder */}
+                    {/* Team Member Photo */}
                     <div className="mx-auto h-32 w-32 overflow-hidden rounded-full bg-gradient-to-br from-ink/5 to-ink/10">
-                      <div className="flex h-full items-center justify-center">
-                        <span className="text-3xl font-bold text-brand/30">
-                          {member.name
-                            .split(" ")
-                            .map((n) => n[0])
-                            .join("")
-                            .slice(0, 2)}
-                        </span>
-                      </div>
+                      <Image
+                        src={member.image}
+                        alt={member.name}
+                        width={128}
+                        height={128}
+                        className="h-full w-full object-cover object-top"
+                      />
                     </div>
 
                     <div className="mt-6 text-center">
@@ -86,10 +72,7 @@ export default function EmployeesPage() {
             ))}
           </StaggerContainer>
 
-          <p className="mt-12 text-center text-sm text-muted">
-            TODO: Replace placeholder data with actual team member information and photos.
-          </p>
-        </div>
+                  </div>
       </section>
 
       <CTASection

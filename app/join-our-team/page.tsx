@@ -46,7 +46,6 @@ const benefits = [
   },
 ];
 
-// TODO: Replace with actual job listings from CMS or API
 const openPositions = [
   {
     title: "Project Manager",
@@ -61,13 +60,6 @@ const openPositions = [
     location: "Windsor, CO",
     description:
       "Skilled carpenter for framing, finishing, and custom woodwork on high-end residential projects.",
-  },
-  {
-    title: "Construction Laborer",
-    type: "Full-time",
-    location: "Windsor, CO",
-    description:
-      "Entry-level position with opportunity to learn and grow. Must be reliable and eager to work.",
   },
 ];
 

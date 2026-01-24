@@ -11,78 +11,77 @@ export const metadata: Metadata = {
     "Read what our clients say about their experience building with Kiefer Built Contracting.",
 };
 
-// TODO: Replace with actual testimonials
 const testimonials = [
   {
     id: 1,
     content:
-      "Kiefer Built exceeded all our expectations. From the initial consultation to the final walkthrough, their attention to detail and commitment to quality was evident in every aspect of our new home. We couldn't be happier with the result.",
-    author: "John & Sarah M.",
-    location: "Windsor, CO",
-    project: "Custom Home",
+      "Mark corrects issues at his own expense. Not the cheapest, but the job gets done right. That's what matters.",
+    author: "Jeff T.",
+    location: "Northern Colorado",
+    project: "Flooring & Cabinets",
     rating: 5,
   },
   {
     id: 2,
     content:
-      "The team at Kiefer Built made our dream home a reality. Their customer portal kept us informed every step of the way, and their craftsmanship is truly exceptional. We've already recommended them to friends and family.",
-    author: "Michael T.",
-    location: "Greeley, CO",
-    project: "Custom Home",
+      "Mark is the very best General Contractor we have ever had. He handled demolition, electrical, plumbing, framing, drywall, painting, and tile work flawlessly.",
+    author: "Al Baker",
+    location: "Northern Colorado",
+    project: "Multi-Trade Remodel",
     rating: 5,
   },
   {
     id: 3,
     content:
-      "We couldn't be happier with our renovation. Professional, on-time, and on-budget. Kiefer Built is the only contractor we'll ever use. They transformed our dated kitchen into a space we love.",
-    author: "The Anderson Family",
-    location: "Loveland, CO",
-    project: "Kitchen Remodel",
+      "Knowledgeable, timely, fair, and respectful – rare traits these days. Our basement finishing project exceeded expectations.",
+    author: "Lindy Frieler",
+    location: "Northern Colorado",
+    project: "Basement Finish",
     rating: 5,
   },
   {
     id: 4,
     content:
-      "Building our forever home was a big decision, and Kiefer Built made us feel confident throughout the entire process. Their transparency and communication were outstanding.",
-    author: "David & Lisa R.",
-    location: "Fort Collins, CO",
-    project: "Custom Home",
+      "Excellent communication, many options presented, and reasonable cost. They made our remodeling project stress-free.",
+    author: "Lori Johnstone",
+    location: "Northern Colorado",
+    project: "Remodel",
     rating: 5,
   },
   {
     id: 5,
     content:
-      "Our basement transformation exceeded our expectations. What was once unused space is now the heart of our home. The attention to detail and quality of work is impressive.",
-    author: "Jennifer K.",
-    location: "Timnath, CO",
-    project: "Basement Finish",
+      "Everyone was simply amazing and responsive throughout our kitchen remodel. You are in good hands with Kiefer Built.",
+    author: "Jean",
+    location: "Northern Colorado",
+    project: "Kitchen Remodel",
     rating: 5,
   },
   {
     id: 6,
     content:
-      "Working with Kiefer Built on our commercial project was a great experience. They delivered on time, on budget, and the quality of construction is excellent. Highly recommend.",
-    author: "Northview Properties",
-    location: "Windsor, CO",
-    project: "Commercial Build",
+      "The work is outstanding. The workers were polite, professional, and clean. Our tile, vanity, and flooring look incredible.",
+    author: "James Eschenfelder",
+    location: "Northern Colorado",
+    project: "Bathroom & Kitchen",
     rating: 5,
   },
   {
     id: 7,
     content:
-      "The custom elevator installation was seamless. Our aging parents can now easily navigate our multi-level home. Kiefer Built handled the entire project with professionalism.",
-    author: "Robert & Mary S.",
-    location: "Greeley, CO",
-    project: "Elevator Installation",
+      "They wanted us to be happy. And we are. Our outdoor patio and entertaining area turned out better than we imagined.",
+    author: "Gina Miles",
+    location: "Northern Colorado",
+    project: "Outdoor Living",
     rating: 5,
   },
   {
     id: 8,
     content:
-      "From design to completion, Kiefer Built guided us through building our retirement home. They listened to our needs and delivered a home that's perfect for this stage of our lives.",
-    author: "The Martinez Family",
-    location: "Loveland, CO",
-    project: "Custom Home",
+      "Best remodel experience we've ever had. Mark is the definition of integrity. We couldn't recommend Kiefer Built more highly.",
+    author: "Stephanie Smith",
+    location: "Northern Colorado",
+    project: "Remodel",
     rating: 5,
   },
 ];
@@ -138,10 +137,7 @@ export default function TestimonialsPage() {
             ))}
           </StaggerContainer>
 
-          <p className="mt-12 text-center text-sm text-muted">
-            TODO: Replace with actual client testimonials.
-          </p>
-        </div>
+                  </div>
       </section>
 
       {/* Stats */}

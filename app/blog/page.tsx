@@ -1,5 +1,4 @@
 import { Metadata } from "next";
-import Link from "next/link";
 import { ArrowRight, Calendar } from "lucide-react";
 import { PageHeader } from "@/components/sections/page-header";
 import { Card, CardContent } from "@/components/ui/card";
@@ -13,61 +12,52 @@ export const metadata: Metadata = {
     "Tips, insights, and updates from Kiefer Built Contracting on home building in Northern Colorado.",
 };
 
-// TODO: Replace with actual blog posts from CMS
+// Blog posts from kbuiltco.com - links to external blog until CMS migration
 const blogPosts = [
   {
-    slug: "choosing-the-right-lot-for-your-custom-home",
-    title: "Choosing the Right Lot for Your Custom Home",
+    slug: "bringing-families-together-the-kiefer-way-how-thoughtful-design-creates-lasting-connection",
+    title: "Bringing Families Together, the Kiefer Way: How Thoughtful Design Creates Lasting Connection",
     excerpt:
-      "Location is everything when building a custom home. Learn what factors to consider when selecting the perfect lot for your dream home in Northern Colorado.",
-    category: "Home Building Tips",
-    date: "2024-01-15",
-    readTime: "5 min read",
-  },
-  {
-    slug: "2024-home-design-trends",
-    title: "2024 Home Design Trends in Northern Colorado",
-    excerpt:
-      "From open floor plans to sustainable materials, discover the top design trends we're seeing in custom homes this year.",
+      "Discover how thoughtful home design can strengthen family bonds and create spaces where lasting memories are made.",
     category: "Design",
-    date: "2024-01-08",
-    readTime: "4 min read",
+    date: "2025-08-18",
+    author: "Codyallen",
   },
   {
-    slug: "understanding-the-home-building-timeline",
-    title: "Understanding the Home Building Timeline",
+    slug: "how-sips-support-a-greener-tomorrow",
+    title: "How SIPs Support a Greener Tomorrow",
     excerpt:
-      "A comprehensive guide to what you can expect during each phase of the custom home building process.",
-    category: "Process",
-    date: "2023-12-20",
-    readTime: "7 min read",
-  },
-  {
-    slug: "benefits-of-home-elevators",
-    title: "The Benefits of Home Elevators",
-    excerpt:
-      "Why more homeowners are choosing to include custom elevators in their new homes for accessibility and luxury.",
-    category: "Features",
-    date: "2023-12-10",
-    readTime: "4 min read",
-  },
-  {
-    slug: "energy-efficient-home-features",
-    title: "Energy-Efficient Features for Your New Home",
-    excerpt:
-      "Smart investments in energy efficiency that will save you money and reduce your environmental impact.",
+      "Learn how Structural Insulated Panels (SIPs) are revolutionizing sustainable building and helping homeowners reduce their environmental footprint.",
     category: "Sustainability",
-    date: "2023-11-28",
-    readTime: "6 min read",
+    date: "2025-04-21",
+    author: "Mark Kiefer",
   },
   {
-    slug: "preparing-for-your-design-consultation",
-    title: "Preparing for Your Design Consultation",
+    slug: "building-smarter-how-kiefer-built-contracting-uses-sips-for-superior-energy-efficiency",
+    title: "Building Smarter: How Kiefer Built Contracting Uses SIPs for Superior Energy Efficiency",
     excerpt:
-      "Make the most of your initial meeting with our team by coming prepared with these key considerations.",
-    category: "Process",
-    date: "2023-11-15",
-    readTime: "3 min read",
+      "An inside look at how we use Structural Insulated Panels to build homes that are more energy-efficient and comfortable year-round.",
+    category: "Construction",
+    date: "2025-04-14",
+    author: "Mark Kiefer",
+  },
+  {
+    slug: "efficiency-and-comfort-a-modern-home-built-for-the-future",
+    title: "Efficiency and Comfort: A Modern Home Built for the Future",
+    excerpt:
+      "Explore how modern building techniques and smart design choices create homes that are both comfortable today and ready for tomorrow.",
+    category: "Features",
+    date: "2025-03-19",
+    author: "Mark Kiefer",
+  },
+  {
+    slug: "award-winning-energy-efficient-home-in-red-feather-lake",
+    title: "Award-Winning Energy-Efficient Home in Red Feather Lake",
+    excerpt:
+      "Take a closer look at our SIPA Building Excellence Award-winning project that showcases innovation, energy efficiency, and sustainability.",
+    category: "Projects",
+    date: "2025-03-19",
+    author: "Mark Kiefer",
   },
 ];
 
@@ -85,12 +75,17 @@ export default function BlogPage() {
           <StaggerContainer className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
             {blogPosts.map((post) => (
               <StaggerItem key={post.slug}>
-                <Link href={`/blog/${post.slug}`} className="block h-full">
+                <a
+                  href={`https://kbuiltco.com/blog/${post.slug}/`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block h-full"
+                >
                   <Card hover className="h-full">
-                    {/* Image Placeholder */}
-                    <div className="aspect-[16/9] bg-gradient-to-br from-ink/5 to-ink/10">
+                    {/* Gradient placeholder */}
+                    <div className="aspect-[16/9] bg-gradient-to-br from-brand/10 to-brand/5">
                       <div className="flex h-full items-center justify-center">
-                        <span className="text-sm text-muted">TODO: Post image</span>
+                        <span className="text-4xl font-bold text-brand/20">KB</span>
                       </div>
                     </div>
                     <CardContent className="p-6">
@@ -112,7 +107,7 @@ export default function BlogPage() {
                             })}
                           </span>
                         </div>
-                        <span>{post.readTime}</span>
+                        <span>By {post.author}</span>
                       </div>
                       <div className="mt-4 flex items-center gap-1 text-sm font-medium text-brand">
                         Read More
@@ -120,14 +115,10 @@ export default function BlogPage() {
                       </div>
                     </CardContent>
                   </Card>
-                </Link>
+                </a>
               </StaggerItem>
             ))}
           </StaggerContainer>
-
-          <p className="mt-12 text-center text-sm text-muted">
-            TODO: Connect to CMS for actual blog content. Individual blog post pages need to be created.
-          </p>
         </div>
       </section>
 

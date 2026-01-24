@@ -68,15 +68,15 @@ export function generateLocalBusinessJsonLd() {
     },
     geo: {
       "@type": "GeoCoordinates",
-      latitude: 40.4774, // TODO: Verify exact coordinates
-      longitude: -104.9014,
+      latitude: 40.51012282654163,
+      longitude: -104.88948723225135,
     },
     areaServed: {
       "@type": "GeoCircle",
       geoMidpoint: {
         "@type": "GeoCoordinates",
-        latitude: 40.4774,
-        longitude: -104.9014,
+        latitude: 40.51012282654163,
+        longitude: -104.88948723225135,
       },
       geoRadius: "50000",
     },

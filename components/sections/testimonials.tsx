@@ -9,25 +9,25 @@ const defaultTestimonials = [
   {
     id: 1,
     content:
-      "Kiefer Built exceeded all our expectations. From the initial consultation to the final walkthrough, their attention to detail and commitment to quality was evident in every aspect of our new home.",
-    author: "John & Sarah M.",
-    location: "Windsor, CO",
+      "Mark is the very best General Contractor we have ever had. He handled demolition, electrical, plumbing, framing, drywall, painting, and tile work flawlessly.",
+    author: "Al Baker",
+    location: "Northern Colorado",
     rating: 5,
   },
   {
     id: 2,
     content:
-      "The team at Kiefer Built made our dream home a reality. Their customer portal kept us informed every step of the way, and their craftsmanship is truly exceptional.",
-    author: "Michael T.",
-    location: "Greeley, CO",
+      "Best remodel experience we've ever had. Mark is the definition of integrity. We couldn't recommend Kiefer Built more highly.",
+    author: "Stephanie Smith",
+    location: "Northern Colorado",
     rating: 5,
   },
   {
     id: 3,
     content:
-      "We couldn't be happier with our renovation. Professional, on-time, and on-budget. Kiefer Built is the only contractor we'll ever use.",
-    author: "The Anderson Family",
-    location: "Loveland, CO",
+      "Knowledgeable, timely, fair, and respectful – rare traits these days. Our basement finishing project exceeded expectations.",
+    author: "Lindy Frieler",
+    location: "Northern Colorado",
     rating: 5,
   },
 ];

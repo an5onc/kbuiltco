@@ -1,89 +1,65 @@
 import { Metadata } from "next";
+import Link from "next/link";
+import { ArrowRight, Check, ExternalLink } from "lucide-react";
 import { PageHeader } from "@/components/sections/page-header";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import { StaggerContainer, StaggerItem, ScrollReveal } from "@/components/motion/scroll-reveal";
 import { CTASection } from "@/components/layout/cta-section";
 
 export const metadata: Metadata = {
   title: "Our Products",
   description:
-    "Premium products and finishes available through Kiefer Built Contracting for your custom home.",
+    "Premium cabinetry and products available through Kiefer Built Contracting. Featuring Northpoint Cabinetry for your custom home.",
 };
 
-// TODO: Replace with actual catalog data
-const categories = [
+const cabinetryStyles = [
   {
-    title: "Flooring",
-    items: [
-      "Hardwood flooring",
-      "Luxury vinyl plank",
-      "Tile & natural stone",
-      "Carpet",
-    ],
+    name: "Traditional",
+    description: "Classic raised panel designs with timeless appeal and elegant detailing.",
   },
   {
-    title: "Countertops",
-    items: [
-      "Granite",
-      "Quartz",
-      "Marble",
-      "Solid surface",
-    ],
+    name: "Transitional",
+    description: "The perfect blend of traditional and contemporary for versatile design.",
   },
   {
-    title: "Cabinetry",
-    items: [
-      "Custom wood cabinets",
-      "Semi-custom options",
-      "Storage solutions",
-      "Built-ins",
-    ],
+    name: "Modern",
+    description: "Clean lines and minimalist aesthetics for a sleek, contemporary look.",
   },
   {
-    title: "Fixtures & Hardware",
-    items: [
-      "Plumbing fixtures",
-      "Lighting",
-      "Door hardware",
-      "Cabinet hardware",
-    ],
-  },
-  {
-    title: "Appliances",
-    items: [
-      "Kitchen appliances",
-      "Laundry",
-      "HVAC systems",
-      "Water heaters",
-    ],
-  },
-  {
-    title: "Exterior",
-    items: [
-      "Siding options",
-      "Roofing materials",
-      "Windows & doors",
-      "Landscaping",
-    ],
+    name: "Rustic",
+    description: "Natural textures and warm finishes that bring warmth to any space.",
   },
 ];
 
-const featuredProducts = [
+const cabinetryFeatures = [
+  "Custom sizing and configurations",
+  "Soft-close hinges and drawer slides",
+  "Solid wood construction",
+  "Wide variety of finishes and stains",
+  "Custom storage solutions",
+  "Lifetime warranty available",
+  "Professional installation",
+  "Design consultation included",
+];
+
+const applications = [
   {
-    name: "Custom Home Elevators",
-    description: "Luxury residential elevators for accessibility and convenience",
-    tag: "New",
+    title: "Kitchen Cabinets",
+    description: "The heart of your home deserves exceptional cabinetry. From wall cabinets to islands, we design kitchens that are both beautiful and functional.",
   },
   {
-    name: "Smart Home Integration",
-    description: "Whole-home automation and smart technology systems",
-    tag: "Popular",
+    title: "Bathroom Vanities",
+    description: "Custom vanities and storage solutions that maximize space while adding elegance to your bathrooms.",
   },
   {
-    name: "Energy-Efficient Windows",
-    description: "Triple-pane windows for optimal insulation and comfort",
-    tag: "Green",
+    title: "Built-In Storage",
+    description: "Custom closet systems, entertainment centers, mudroom cubbies, and home office solutions.",
+  },
+  {
+    title: "Laundry & Utility",
+    description: "Practical and organized spaces with custom cabinetry designed for utility rooms and laundry areas.",
   },
 ];
 
@@ -91,87 +67,140 @@ export default function CatalogItemsPage() {
   return (
     <>
       <PageHeader
-        title="Our Products"
-        subtitle="Quality Materials"
-        description="Premium products and finishes carefully selected for your custom home."
+        title="Premium Cabinetry"
+        subtitle="Our Products"
+        description="We partner with Northpoint Cabinetry to bring you exceptional quality and craftsmanship for your custom home."
       />
 
-      {/* Featured Products */}
+      {/* Featured Partner */}
       <section className="section-padding bg-white">
         <div className="container-site">
-          <ScrollReveal>
-            <h2 className="text-center">Featured Products</h2>
-          </ScrollReveal>
-
-          <StaggerContainer className="mt-12 grid gap-6 md:grid-cols-3">
-            {featuredProducts.map((product) => (
-              <StaggerItem key={product.name}>
-                <Card hover className="h-full">
-                  {/* Image Placeholder */}
-                  <div className="aspect-[16/9] bg-gradient-to-br from-ink/5 to-ink/10">
-                    <div className="flex h-full items-center justify-center">
-                      <span className="text-sm text-muted">TODO: Product image</span>
-                    </div>
+          <div className="mx-auto max-w-4xl">
+            <ScrollReveal>
+              <div className="rounded-2xl border border-border bg-paper p-8 md:p-12">
+                <div className="flex flex-col items-center text-center">
+                  <Badge variant="default" className="mb-4">Featured Partner</Badge>
+                  <h2 className="text-3xl font-bold md:text-4xl">Northpoint Cabinetry</h2>
+                  <p className="mt-4 max-w-2xl text-lg text-muted">
+                    Northpoint Cabinetry offers high-quality, American-made cabinets with endless customization options.
+                    As an authorized dealer, we bring their exceptional craftsmanship to every Kiefer Built home.
+                  </p>
+                  <div className="mt-8 flex flex-wrap justify-center gap-4">
+                    <Button asChild>
+                      <a
+                        href="https://northpointcabinetry.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Visit Northpoint Cabinetry
+                        <ExternalLink className="ml-2 h-4 w-4" />
+                      </a>
+                    </Button>
+                    <Button asChild variant="outline">
+                      <Link href="/contact">
+                        Schedule a Consultation
+                        <ArrowRight className="ml-2 h-4 w-4" />
+                      </Link>
+                    </Button>
                   </div>
-                  <CardContent className="p-6">
-                    <div className="flex items-start justify-between">
-                      <h3 className="text-lg font-semibold">{product.name}</h3>
-                      <Badge variant="default">{product.tag}</Badge>
-                    </div>
-                    <p className="mt-2 text-sm text-muted">{product.description}</p>
-                  </CardContent>
-                </Card>
-              </StaggerItem>
-            ))}
-          </StaggerContainer>
+                </div>
+              </div>
+            </ScrollReveal>
+          </div>
         </div>
       </section>
 
-      {/* Product Categories */}
+      {/* Cabinetry Styles */}
       <section className="section-padding bg-paper-dark">
         <div className="container-site">
           <ScrollReveal>
             <div className="mx-auto max-w-2xl text-center">
-              <h2>Product Categories</h2>
+              <h2>Cabinet Styles</h2>
               <p className="mt-4 text-lg text-muted">
-                We partner with trusted suppliers to offer a wide selection of quality products for every aspect of your home.
+                From timeless traditional to sleek modern designs, find the perfect style for your home.
               </p>
             </div>
           </ScrollReveal>
 
-          <StaggerContainer className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {categories.map((category) => (
-              <StaggerItem key={category.title}>
-                <Card className="h-full">
+          <StaggerContainer className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {cabinetryStyles.map((style) => (
+              <StaggerItem key={style.name}>
+                <Card hover className="h-full">
+                  <div className="aspect-[4/3] bg-gradient-to-br from-brand/10 to-brand/5">
+                    <div className="flex h-full items-center justify-center">
+                      <span className="text-2xl font-bold text-brand/30">{style.name.charAt(0)}</span>
+                    </div>
+                  </div>
                   <CardContent className="p-6">
-                    <h3 className="text-lg font-semibold">{category.title}</h3>
-                    <ul className="mt-4 space-y-2">
-                      {category.items.map((item) => (
-                        <li
-                          key={item}
-                          className="flex items-center gap-2 text-sm text-muted"
-                        >
-                          <div className="h-1.5 w-1.5 rounded-full bg-brand" />
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
+                    <h3 className="text-lg font-semibold">{style.name}</h3>
+                    <p className="mt-2 text-sm text-muted">{style.description}</p>
                   </CardContent>
                 </Card>
               </StaggerItem>
             ))}
           </StaggerContainer>
+        </div>
+      </section>
 
-          <p className="mt-12 text-center text-sm text-muted">
-            TODO: Replace with actual product catalog. Consider integrating with vendor catalog system.
-          </p>
+      {/* Applications */}
+      <section className="section-padding bg-white">
+        <div className="container-site">
+          <ScrollReveal>
+            <div className="mx-auto max-w-2xl text-center">
+              <h2>Applications</h2>
+              <p className="mt-4 text-lg text-muted">
+                Custom cabinetry solutions for every room in your home.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <StaggerContainer className="mt-12 grid gap-8 md:grid-cols-2">
+            {applications.map((app) => (
+              <StaggerItem key={app.title}>
+                <div className="rounded-xl border border-border bg-paper p-6">
+                  <h3 className="text-xl font-semibold">{app.title}</h3>
+                  <p className="mt-2 text-muted">{app.description}</p>
+                </div>
+              </StaggerItem>
+            ))}
+          </StaggerContainer>
+        </div>
+      </section>
+
+      {/* Features */}
+      <section className="section-padding bg-ink text-white">
+        <div className="container-site">
+          <div className="mx-auto max-w-4xl">
+            <ScrollReveal>
+              <div className="text-center">
+                <h2 className="text-white">What's Included</h2>
+                <p className="mt-4 text-lg text-white/70">
+                  Every cabinetry project includes these premium features and services.
+                </p>
+              </div>
+            </ScrollReveal>
+
+            <StaggerContainer className="mt-12 grid gap-4 sm:grid-cols-2">
+              {cabinetryFeatures.map((feature) => (
+                <StaggerItem key={feature}>
+                  <div className="flex items-center gap-3">
+                    <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-brand">
+                      <Check className="h-4 w-4 text-white" />
+                    </div>
+                    <span className="text-white/90">{feature}</span>
+                  </div>
+                </StaggerItem>
+              ))}
+            </StaggerContainer>
+          </div>
         </div>
       </section>
 
       <CTASection
-        title="Need Help Choosing?"
-        description="Our design team can help you select the perfect products and finishes for your home."
-        variant="dark"
+        title="Ready to Design Your Cabinetry?"
+        description="Schedule a consultation with our team to explore options and start planning your custom cabinetry."
+        primaryCta={{ label: "Get Started", href: "/contact" }}
+        secondaryCta={{ label: "View Our Work", href: "/gallery" }}
       />
     </>
   );

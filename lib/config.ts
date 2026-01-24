@@ -17,9 +17,9 @@ export const siteConfig = {
     instagram: "https://www.instagram.com/kieferbuiltcontracting",
   },
   externalLinks: {
-    clientPortal: "https://buildertrend.net/Login", // TODO: Update with actual client portal URL
-    epsHomes: "https://epshomes.com", // TODO: Verify URL
-    flipbook: "https://flipbook.kbuiltco.com", // TODO: Verify URL
+    clientPortal: "https://kbuiltco.com/buildertrend/",
+    epsHomes: "https://www.epsbuildings.com/",
+    flipbook: "https://issuu.com/mantoothmarketingcompany/docs/kbuilt_co_home_book_3-25",
   },
 };
 

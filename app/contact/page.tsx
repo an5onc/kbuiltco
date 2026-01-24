@@ -106,16 +106,18 @@ export default function ContactPage() {
                     ))}
                   </div>
 
-                  {/* Map Placeholder */}
-                  <div className="mt-8 aspect-video overflow-hidden rounded-xl bg-gradient-to-br from-ink/5 to-ink/10">
-                    <div className="flex h-full items-center justify-center">
-                      <div className="text-center">
-                        <MapPin className="mx-auto h-8 w-8 text-brand/30" />
-                        <p className="mt-2 text-sm text-muted">
-                          TODO: Embed Google Map
-                        </p>
-                      </div>
-                    </div>
+                  {/* Google Map */}
+                  <div className="mt-8 aspect-video overflow-hidden rounded-xl">
+                    <iframe
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3033.431737106151!2d-104.89205142409142!3d40.50994744996079!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x876eb054fe27a1c9%3A0xd72033047818561b!2s35065%20Co%20Rd%2019%2C%20Windsor%2C%20CO%2080550!5e0!3m2!1sen!2sus!4v1769229646486!5m2!1sen!2sus"
+                      width="100%"
+                      height="100%"
+                      style={{ border: 0 }}
+                      allowFullScreen
+                      loading="lazy"
+                      referrerPolicy="no-referrer-when-downgrade"
+                      title="Kiefer Built Contracting Location"
+                    />
                   </div>
                 </div>
               </ScrollReveal>
