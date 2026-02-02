@@ -73,14 +73,17 @@ export function ContactForm() {
       onSubmit={handleSubmit}
       className="rounded-2xl border border-border bg-white p-8"
     >
-      {/* Honeypot */}
-      <input
-        type="text"
-        name="website"
-        className="hidden"
-        tabIndex={-1}
-        autoComplete="off"
-      />
+      {/* Honeypot — hidden from screen readers and bots */}
+      <div aria-hidden="true" className="absolute -left-[9999px]">
+        <label htmlFor="contact-website">Website</label>
+        <input
+          type="text"
+          id="contact-website"
+          name="website"
+          tabIndex={-1}
+          autoComplete="off"
+        />
+      </div>
 
       <div className="grid gap-6 md:grid-cols-2">
         {/* Name */}
@@ -93,6 +96,7 @@ export function ContactForm() {
             id="name"
             name="name"
             required
+            autoComplete="name"
             className="mt-1 block w-full rounded-lg border border-border bg-paper px-4 py-3 text-ink placeholder:text-muted focus:border-brand focus:outline-none focus:ring-1 focus:ring-brand"
             placeholder="John Doe"
           />
@@ -108,6 +112,7 @@ export function ContactForm() {
             id="email"
             name="email"
             required
+            autoComplete="email"
             className="mt-1 block w-full rounded-lg border border-border bg-paper px-4 py-3 text-ink placeholder:text-muted focus:border-brand focus:outline-none focus:ring-1 focus:ring-brand"
             placeholder="john@example.com"
           />
@@ -122,6 +127,7 @@ export function ContactForm() {
             type="tel"
             id="phone"
             name="phone"
+            autoComplete="tel"
             className="mt-1 block w-full rounded-lg border border-border bg-paper px-4 py-3 text-ink placeholder:text-muted focus:border-brand focus:outline-none focus:ring-1 focus:ring-brand"
             placeholder="(555) 123-4567"
           />

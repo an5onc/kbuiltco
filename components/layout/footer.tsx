@@ -4,9 +4,9 @@ import { siteConfig, footerNavigation } from "@/lib/config";
 
 export function Footer() {
   return (
-    <footer className="border-t border-border bg-ink text-white">
+    <footer className="border-t border-border bg-ink text-white" role="contentinfo">
       <div className="container-site section-padding">
-        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-5">
           {/* Brand Column */}
           <div className="lg:col-span-1">
             <Link href="/" className="flex items-center gap-2">
@@ -70,6 +70,25 @@ export function Footer() {
             </h3>
             <ul className="space-y-3">
               {footerNavigation.services.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-sm text-muted-light transition-colors hover:text-white"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Resources Column */}
+          <div>
+            <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider">
+              Resources
+            </h3>
+            <ul className="space-y-3">
+              {footerNavigation.resources.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}

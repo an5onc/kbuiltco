@@ -85,14 +85,17 @@ export function VendorForm() {
       onSubmit={handleSubmit}
       className="rounded-2xl border border-border bg-white p-8"
     >
-      {/* Honeypot */}
-      <input
-        type="text"
-        name="website"
-        className="hidden"
-        tabIndex={-1}
-        autoComplete="off"
-      />
+      {/* Honeypot — hidden from screen readers and bots */}
+      <div aria-hidden="true" className="absolute -left-[9999px]">
+        <label htmlFor="vendor-website">Website</label>
+        <input
+          type="text"
+          id="vendor-website"
+          name="website"
+          tabIndex={-1}
+          autoComplete="off"
+        />
+      </div>
 
       <div className="grid gap-6 md:grid-cols-2">
         {/* Company Name */}
@@ -105,6 +108,7 @@ export function VendorForm() {
             id="company"
             name="company"
             required
+            autoComplete="organization"
             className="mt-1 block w-full rounded-lg border border-border bg-paper px-4 py-3 text-ink placeholder:text-muted focus:border-brand focus:outline-none focus:ring-1 focus:ring-brand"
             placeholder="ABC Construction LLC"
           />
@@ -120,6 +124,7 @@ export function VendorForm() {
             id="contactName"
             name="contactName"
             required
+            autoComplete="name"
             className="mt-1 block w-full rounded-lg border border-border bg-paper px-4 py-3 text-ink placeholder:text-muted focus:border-brand focus:outline-none focus:ring-1 focus:ring-brand"
             placeholder="John Smith"
           />
@@ -135,6 +140,7 @@ export function VendorForm() {
             id="email"
             name="email"
             required
+            autoComplete="email"
             className="mt-1 block w-full rounded-lg border border-border bg-paper px-4 py-3 text-ink placeholder:text-muted focus:border-brand focus:outline-none focus:ring-1 focus:ring-brand"
             placeholder="contact@abcconstruction.com"
           />
@@ -150,6 +156,7 @@ export function VendorForm() {
             id="phone"
             name="phone"
             required
+            autoComplete="tel"
             className="mt-1 block w-full rounded-lg border border-border bg-paper px-4 py-3 text-ink placeholder:text-muted focus:border-brand focus:outline-none focus:ring-1 focus:ring-brand"
             placeholder="(555) 123-4567"
           />

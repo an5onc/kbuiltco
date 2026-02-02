@@ -80,6 +80,7 @@ export function generateLocalBusinessJsonLd() {
       },
       geoRadius: "50000",
     },
+    image: `${siteConfig.url}/og-image.jpg`,
     sameAs: [siteConfig.social.facebook, siteConfig.social.instagram],
     priceRange: "$$$",
     openingHoursSpecification: {

@@ -33,7 +33,7 @@ export function Header() {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex lg:items-center lg:gap-1">
+          <nav aria-label="Main navigation" className="hidden lg:flex lg:items-center lg:gap-1">
             {navigation.map((item) => (
               <div
                 key={item.label}
